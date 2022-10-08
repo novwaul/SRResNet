@@ -138,7 +138,7 @@ def train(args, resume):
 
             total_time += elpased_time
 
-            diff = psnr - bicubic_psnr
+            diff = avg_psnr - avg_bicubic_psnr
             if diff > best_psnr_diff:
                 best_psnr_diff = diff
                 torch.save(net.state_dict(), check_pnt_path)
